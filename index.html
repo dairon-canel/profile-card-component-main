@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Profile card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+    :root {
+      /* Primary */
+      --dark-cyan: hsl(185, 75%, 39%);
+      --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+      --dark-grayish-blue: hsl(227, 10%, 46%);
+
+      /* Neutral */
+      --dark-gray: hsl(0, 0%, 59%);
+
+      font-family: 'Kumbh Sans', sans-serif;
+      font-size: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      position: relative;
+      background-color: var(--dark-cyan);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card__container::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      min-width: 50vw;
+      min-height: 50vh;
+      background-image: url("./images/bg-pattern-top.svg");
+      transform: rotate(180deg);
+      z-index: -1;
+    }
+
+    .card__container::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      min-width: 50vw;
+      min-height: 50vh;
+      background-image: url("./images/bg-pattern-bottom.svg");
+      z-index: -1;
+    }
+
+    .card__container {
+      margin: 50px 50px;
+      background-color: #fff;
+      min-width: 350px;
+      border-radius: 20px;
+    }
+
+    .card__pattern {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      position: absolute;
+    }
+
+    .card {
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .socials__img {
+      border-radius: 50%;
+      border: 5px solid #fff;
+      margin: 93px 0 20px;
+    }
+
+    .socials__title {
+      font-size: 1.5rem;
+      color: var(--very-dark-desaturated-blue);
+      margin-bottom: 10px;
+    }
+
+    .socials__age {
+      color: var(--dark-grayish-blue);
+      font-weight: 400;
+      margin-left: 5px;
+    }
+
+    .socials__location {
+      color: var(--dark-grayish-blue);
+      font-weight: 400;
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+
+    .line__break {
+      min-width: 350px;
+      height: 1px;
+      background-color: var(--dark-gray);
+    }
+
+    .socials__stats {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-width: 350px;
+      margin: 30px 0;
+      padding: 0 40px;
+    }
+
+    .socials__stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 50px;
+    }
+
+    .socials__stats-number {
+      font-size: 1.3rem;
+      color: var(--very-dark-desaturated-blue);
+      font-weight: 700;
+    }
+
+    .socials__stats-title {
+      font-size: .8rem;
+      color: var(--dark-grayish-blue);
+      font-weight: 400;
+    }
+
+    .attribution { 
+      font-size: 11px; 
+      text-align: center; 
+      position: fixed;
+      bottom: 0;
+    }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    @media screen and (max-width: 700px) {
+      .card__container::before,
+      .card__container::after {
+        min-width: 60vw;
+        min-height: 60vh;
+      }
+
+    }
+  </style>
+</head>
+<body>
+  <main class="card__container">
+    <img src="./images/bg-pattern-card.svg" alt="card-pattern" width="350" height="140" class="card__pattern">
+    <div class="card">
+      <img src="./images/image-victor.jpg" alt="socials" width="96" height="96" class="socials__img">
+      <h1 class="socials__title">Victor Crest
+      <span class="socials__age">26</span>
+      </h1>
+      <h2 class="socials__location">London</h2>
+      <div class="line__break"></div>
+      <div class="socials__stats">
+        <div class="socials__stat">
+          <div class="socials__stats-number">80K</div>
+          <div class="socials__stats-title">Followers</div>
+        </div>
+        <div class="socials__stat">
+          <div class="socials__stats-number">803K</div>
+          <div class="socials__stats-title">Likes</div>
+        </div>
+        <div class="socials__stat">
+          <div class="socials__stats-number">1.4K</div>
+          <div class="socials__stats-title">Photos</div>
+      </div>
+    </div>
+    </div>
+  </main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://portfolio-daironcanel.netlify.app">Dairon Canel</a>.
+  </footer>
+</body>
+</html>
